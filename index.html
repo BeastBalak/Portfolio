@@ -185,13 +185,18 @@
       }, 2000);
     });
 
+    let flipped = false;
+
     window.addEventListener('scroll', () => {
       const card = document.getElementById('flip-card');
-      const offset = window.scrollY;
-      if (offset > 50) {
+      if (!flipped && window.scrollY > 50) {
+        flipped = true;
         card.classList.add('flipped');
-        document.querySelector('#id-card').style.display = 'none';
-        document.querySelector('main').style.display = 'block';
+
+        setTimeout(() => {
+          document.querySelector('#id-card').style.display = 'none';
+          document.querySelector('main').style.display = 'block';
+        }, 1000);
       }
     });
   </script>
