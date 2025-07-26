@@ -133,7 +133,49 @@
   </section>
 
   <main id="main-content">
-    <!-- ... main content unchanged ... -->
+    <header style="background-color: #111; color: white; padding: 2rem; text-align: center;">
+      <h1>Jayesh Sharma</h1>
+      <p>Video Editor | Visual Storyteller | Content Creator</p>
+    </header>
+
+    <section style="max-width: 900px; margin: 2rem auto; padding: 1rem;">
+      <h2>About Me</h2>
+      <p>
+        I'm a passionate video editor who brings stories to life. I specialize in cinematic edits and visual storytelling for creators, businesses, and brands.
+      </p>
+    </section>
+
+    <section style="max-width: 900px; margin: 2rem auto; padding: 1rem;">
+      <h2>My Work</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+        <div style="background: white; border-radius: 8px; padding: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); color: #333;">
+          <h3>Documentary</h3>
+          <img src="https://i.ytimg.com/vi/2vnaxQhUXi8/hqdefault.jpg" alt="Thumbnail" style="width:100%; border-radius: 6px; margin-bottom: 10px;">
+          <p>A long-form video which condenses months of footage into my personal journey.</p>
+          <a href="https://youtu.be/2vnaxQhUXi8" target="_blank" style="color: #3b3d35;">Watch</a>
+        </div>
+        <div style="background: white; border-radius: 8px; padding: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); color: #333;">
+          <h3>Introspective, Concept Based</h3>
+          <img src="https://i.ytimg.com/vi/RDGhEXpmVgk/hqdefault.jpg" alt="Thumbnail" style="width:100%; border-radius: 6px; margin-bottom: 10px;">
+          <p>Takes an idea and talks about it.</p>
+          <a href="https://youtu.be/RDGhEXpmVgk" target="_blank" style="color: #3b3d35;">Watch</a>
+        </div>
+        <div style="background: white; border-radius: 8px; padding: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); color: #333; text-align:center;">
+          <h3>More coming soon...</h3>
+          <p>I release videos on the 10th of every month</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width: 900px; margin: 2rem auto; padding: 1rem;">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:beastgamerxjay@gmail.com" style="color:#bfff00;">beastgamerxjay@gmail.com</a></p>
+      <p>Instagram: <a href="https://instagram.com/ihyjayesh" target="_blank" style="color:#bfff00;">@ihyjayesh</a></p>
+    </section>
+
+    <footer style="text-align: center; padding: 2rem; background-color: #222; color: white;">
+      © 2025 Jayesh Sharma. All rights reserved.
+    </footer>
   </main>
 
   <!-- AOS Script -->
@@ -152,7 +194,7 @@
       document.getElementById('id-card').style.display = 'none';
       const main = document.getElementById('main-content');
       main.style.display = 'block';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: main.offsetTop, behavior: 'smooth' });
     }
   </script>
 </body>
