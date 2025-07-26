@@ -33,14 +33,22 @@
       align-items: center;
       z-index: 9999;
     }
+    .loader::before {
+      content: '';
+      width: 50px;
+      height: 50px;
+      border: 5px solid #bfff00;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-right: 1rem;
+    }
     .loader span {
       color: #bfff00;
       font-size: 1.5rem;
-      animation: blink 1s infinite alternate;
     }
-    @keyframes blink {
-      from { opacity: 1; }
-      to { opacity: 0.5; }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
     #id-card {
       height: 100vh;
@@ -50,6 +58,7 @@
       background-color: #2a2b26;
       perspective: 1000px;
       overflow: hidden;
+      flex-direction: column;
     }
     .card {
       width: 300px;
@@ -92,6 +101,20 @@
       margin-bottom: 1rem;
       border: 2px solid #bfff00;
     }
+    .enter-btn {
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      background-color: #bfff00;
+      color: #3b3d35;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'Playfair Display', serif;
+    }
+    .enter-btn:hover {
+      background-color: #aadd00;
+    }
     main {
       display: none;
     }
@@ -111,10 +134,11 @@
         </div>
         <div class="card-back">
           <h2>Welcome</h2>
-          <p>Scroll down to enter</p>
+          <p>Click below to enter</p>
         </div>
       </div>
     </div>
+    <button class="enter-btn" onclick="enterWebsite()">Enter Website</button>
   </section>
 
   <main id="main-content">
@@ -133,23 +157,15 @@
       }, 2000);
     });
 
-    let flipped = false;
-    window.addEventListener('scroll', () => {
-      const card = document.getElementById('flip-card');
-      const idCardSection = document.getElementById('id-card');
-      const main = document.querySelector('main');
+    const card = document.getElementById('flip-card');
+    card.classList.add('flipped');
 
-      if (!flipped && window.scrollY > 50) {
-        flipped = true;
-        card.classList.add('flipped');
-
-        setTimeout(() => {
-          idCardSection.style.display = 'none';
-          main.style.display = 'block';
-          main.scrollIntoView({ behavior: 'smooth' });
-        }, 1000);
-      }
-    });
+    function enterWebsite() {
+      document.getElementById('id-card').style.display = 'none';
+      const main = document.getElementById('main-content');
+      main.style.display = 'block';
+      main.scrollIntoView({ behavior: 'smooth' });
+    }
   </script>
 </body>
 </html>
