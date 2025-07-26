@@ -41,11 +41,6 @@
       border-top-color: transparent;
       border-radius: 50%;
       animation: spin 1s linear infinite;
-      margin-right: 1rem;
-    }
-    .loader span {
-      color: #bfff00;
-      font-size: 1.5rem;
     }
     @keyframes spin {
       to { transform: rotate(360deg); }
@@ -69,10 +64,6 @@
       text-align: center;
       box-shadow: 0 0 20px rgba(0,0,0,0.3);
       transform-style: preserve-3d;
-      transition: transform 1s;
-    }
-    .card.flipped {
-      transform: rotateY(180deg);
     }
     .card-inner {
       position: relative;
@@ -121,7 +112,7 @@
   </style>
 </head>
 <body>
-  <div class="loader"><span>Loading your identity...</span></div>
+  <div class="loader"></div>
 
   <section id="id-card">
     <div class="card" id="flip-card">
@@ -157,14 +148,11 @@
       }, 2000);
     });
 
-    const card = document.getElementById('flip-card');
-    card.classList.add('flipped');
-
     function enterWebsite() {
       document.getElementById('id-card').style.display = 'none';
       const main = document.getElementById('main-content');
       main.style.display = 'block';
-      main.scrollIntoView({ behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
 </body>
